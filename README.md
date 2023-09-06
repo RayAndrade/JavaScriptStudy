@@ -2,7 +2,7 @@ Here's a comprehensive course outline for learning JavaScript. Depending on the 
 
 **JavaScript Course Outline**
 
-1. **Introduction to JavaScript**
+1. **[Introduction to JavaScript](Introduction_to_JavaScript.md)**
    - What is JavaScript?
    - History and Evolution of JavaScript
    - Setting Up the Development Environment
