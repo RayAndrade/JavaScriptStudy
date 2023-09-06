@@ -1,4 +1,4 @@
-Certainly! Let's delve into these foundational concepts of JavaScript.
+Let's delve into these foundational concepts of JavaScript.
 
 ### 1. Variables and Data Types:
 
