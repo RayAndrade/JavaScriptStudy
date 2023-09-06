@@ -17,4 +17,4 @@ Event-driven: It can be set up to respond to actions, like a button click or a f
 
 Object-Oriented & Functional: JavaScript supports multiple programming paradigms, allowing for diverse coding styles and techniques.
 
-[Next](02_Basics_of_JavaScript/README.md)
+[Next](./02_Basics_of_JavaScript/README.md)
