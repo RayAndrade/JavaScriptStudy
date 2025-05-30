@@ -1,28 +1,23 @@
-
 const Singleton = (function () {
 
-    let uniqueInstance;  // modern: block-scoped
-
+    let uniqueInstance;
     function SingletonConstructor() {
-        const value = Math.random();  // modern: constant once assigned
-
+        const value = Math.random();
         return {
             getValue: function () {
-                return value;
+                value;
             }
         };
     }
-
     return {
         getInstance: function () {
             if (!uniqueInstance) {
                 uniqueInstance = new SingletonConstructor();
             }
             return uniqueInstance;
-        }
-    };
-
-})();
+        }};
+    }
+)();
 
 const singleton1 = Singleton.getInstance();
 const singleton2 = Singleton.getInstance();
