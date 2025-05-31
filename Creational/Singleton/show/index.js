@@ -1,31 +1,13 @@
-const Singleton = (function () {
+// Singleton implemented using closure (Module Pattern)
+const Singleton = (function() { /* a */ })();
 
-    let uniqueInstance;  // modern: block-scoped
+// Test code
+const singletonA = Singleton.getInstance();
+const singletonB = Singleton.getInstance();
 
-    function SingletonConstructor() {
-        const value = Math.random();  // modern: constant once assigned
+singletonA.publicMethod();
+console.log("Singleton A random number: " + singletonA.getRandomNumber());
+console.log("Singleton B random number: " + singletonB.getRandomNumber());
 
-        return {
-            getValue: function () {
-                return value;
-            }
-        };
-    }
+console.log("Are both instances the same?", singletonA === singletonB);
 
-    return {
-        getInstance: function () {
-            if (!uniqueInstance) {
-                uniqueInstance = new SingletonConstructor();
-            }
-            return uniqueInstance;
-        }
-    };
-
-})();
-
-    const singleton1 = Singleton.getInstance();
-    const singleton2 = Singleton.getInstance();
-
-    console.log("Singleton 1 value:", singleton1.getValue());
-    console.log("Singleton 2 value:", singleton2.getValue());
-    console.log("Are both instances equal?", singleton1 === singleton2);

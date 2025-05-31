@@ -1,60 +1,80 @@
 
-
-We Start with a Class function called *Singleton*
-level *a*
-
+Singleton implemented using closure (Module Pattern)
 ```
-const Singleton = (function () {  b  })();
-```
-level *a*
-```
-let uniqueInstance;
+const Singleton = (function() { /* a */ })();
 ```
 
-level *b*
 ```
-function init() {  c  }
-```
-
-level *c*
-```
-let value = Math.random();
+let instance;
+/* b */
 ```
 
-level *c*
 ```
-return { d };
+function init() { /* c */ }
 ```
 
-level *d*
 ```
-getInstance: function () { e };
+const privateRandomNumber = Math.random();
+/* d */
 ```
-level *e*
+
 ```
-if (!uniqueInstance) {
-   uniqueInstance = init();
+function privateMethod() {
+  console.log("Private method called");
+}
+/* e */
+```
+
+```
+function privateMethod() {
+  console.log("Private method called");
+}
+return { /* f */ };
+```
+
+```
+publicMethod: function() {
+ console.log("Public method called");
+   privateMethod();
+},
+getRandomNumber: function() {
+  return privateRandomNumber;
 }
 ```
-level *e*
+
+
 ```
-return uniqueInstance;
+{
+ getInstance: function() {
+  if (!instance) {
+    instance = init();
+    }
+ return instance;
 ```
 
-level *a*
 ```
-const singleton1 = Singleton.getInstance();
-const singleton2 = Singleton.getInstance();
+// Initialize static property manually (outside class body)
+Singleton.instance = null;
+// This guarantees that when the first object is created, Singleton.instance is initially null.
 
-console.log("Singleton 1 value:", singleton1.getValue());
-console.log("Singleton 2 value:", singleton2.getValue());
-console.log("Are both instances equal?", singleton1 === singleton2);
-```
+// === Testing code ===
 
-Result when run
-```
-Singleton 1 value: 0.8350858568212289
-Singleton 2 value: 0.8350858568212289
-Are both instances equal? true
+const singletonA = new Singleton();
+// First call to constructor: since instance is null, constructor creates the instance.
+
+const singletonB = new Singleton();
+// Second call: constructor detects Singleton.instance exists, returns existing instance.
+
+singletonA.publicMethod();
+// Call publicMethod on singletonA. Will invoke internal privateMethod as well.
+
+console.log("Singleton A random number: " + singletonA.getRandomNumber());
+// Prints the random number that was assigned during initialization.
+
+console.log("Singleton B random number: " + singletonB.getRandomNumber());
+// Prints same random number as singletonA, confirming shared instance.
+
+console.log("Are both instances the same?", singletonA === singletonB);
+// Strict equality check: confirms singletonA and singletonB are actually the same object.
 ```
 
