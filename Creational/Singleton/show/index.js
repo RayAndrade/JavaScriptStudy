@@ -1,23 +1,26 @@
 const Singleton = (function () {
-
     let uniqueInstance;
-    function SingletonConstructor() {
-        const value = Math.random();
+
+    function init() {
+        // Private members
+        let value = Math.random();
+
         return {
             getValue: function () {
-                value;
+                return value;
             }
         };
     }
+
     return {
         getInstance: function () {
             if (!uniqueInstance) {
-                uniqueInstance = new SingletonConstructor();
+                uniqueInstance = init();
             }
             return uniqueInstance;
-        }};
-    }
-)();
+        }
+    };
+})();
 
 const singleton1 = Singleton.getInstance();
 const singleton2 = Singleton.getInstance();
