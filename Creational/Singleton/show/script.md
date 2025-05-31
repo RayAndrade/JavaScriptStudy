@@ -50,3 +50,11 @@ console.log("Singleton 1 value:", singleton1.getValue());
 console.log("Singleton 2 value:", singleton2.getValue());
 console.log("Are both instances equal?", singleton1 === singleton2);
 ```
+
+Result when run
+```
+Singleton 1 value: 0.8350858568212289
+Singleton 2 value: 0.8350858568212289
+Are both instances equal? true
+```
+
