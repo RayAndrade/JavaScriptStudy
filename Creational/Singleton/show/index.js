@@ -1,3 +1,5 @@
+
+
 const Singleton = (function () {
     let uniqueInstance;
 
