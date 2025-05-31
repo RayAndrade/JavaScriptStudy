@@ -1,11 +1,9 @@
-
-
 const Singleton = (function () {
-    let uniqueInstance;
 
-    function init() {
-        // Private members
-        let value = Math.random();
+    let uniqueInstance;  // modern: block-scoped
+
+    function SingletonConstructor() {
+        const value = Math.random();  // modern: constant once assigned
 
         return {
             getValue: function () {
@@ -17,16 +15,17 @@ const Singleton = (function () {
     return {
         getInstance: function () {
             if (!uniqueInstance) {
-                uniqueInstance = init();
+                uniqueInstance = new SingletonConstructor();
             }
             return uniqueInstance;
         }
     };
+
 })();
 
-const singleton1 = Singleton.getInstance();
-const singleton2 = Singleton.getInstance();
+    const singleton1 = Singleton.getInstance();
+    const singleton2 = Singleton.getInstance();
 
-console.log("Singleton 1 value:", singleton1.getValue());
-console.log("Singleton 2 value:", singleton2.getValue());
-console.log("Are both instances equal?", singleton1 === singleton2);
+    console.log("Singleton 1 value:", singleton1.getValue());
+    console.log("Singleton 2 value:", singleton2.getValue());
+    console.log("Are both instances equal?", singleton1 === singleton2);
