@@ -1,11 +1,7 @@
-// Singleton implemented using closure (Module Pattern)
 const Singleton = (function() {
-    // Private instance variable
     let instance;
 
-    // Private initialization function
     function init() {
-        // Private data and methods
         const privateRandomNumber = Math.random();
 
         function privateMethod() {
@@ -13,7 +9,6 @@ const Singleton = (function() {
         }
 
         return {
-            // Public methods and properties
             publicMethod: function() {
                 console.log("Public method called");
                 privateMethod();
@@ -24,7 +19,6 @@ const Singleton = (function() {
         };
     }
 
-    // Public interface to get the Singleton instance
     return {
         getInstance: function() {
             if (!instance) {
@@ -35,7 +29,6 @@ const Singleton = (function() {
     };
 })();
 
-// Test code
 const singletonA = Singleton.getInstance();
 const singletonB = Singleton.getInstance();
 
@@ -44,4 +37,3 @@ console.log("Singleton A random number: " + singletonA.getRandomNumber());
 console.log("Singleton B random number: " + singletonB.getRandomNumber());
 
 console.log("Are both instances the same?", singletonA === singletonB);
-
