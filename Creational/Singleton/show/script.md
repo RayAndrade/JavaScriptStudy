@@ -76,7 +76,7 @@ getInstance: function() {
 )();
 ```
 
-````
+```
 const singletonA = Singleton.getInstance();
 const singletonB = Singleton.getInstance();
 ```
