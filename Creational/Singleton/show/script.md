@@ -35,7 +35,7 @@ const Singleton = (function() {
 **START**
 
 ```
-const Singleton = (function() { /**/ }
+const Singleton = (function() { /**/ })();
 ```
 ```
 let instance;
