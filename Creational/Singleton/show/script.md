@@ -1,5 +1,4 @@
 
-
 ```
 const Singleton = (function() {
     let instance;
@@ -32,6 +31,8 @@ const Singleton = (function() {
     };
 })();
 ```
+
+**START**
 
 ```
 const Singleton = (function() { /**/ }
