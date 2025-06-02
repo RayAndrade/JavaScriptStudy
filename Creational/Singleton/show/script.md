@@ -31,10 +31,11 @@ const Singleton = (function() {
         }
     };
 })();
+```
 
-
+```
 const Singleton = (function() { /**/ }
-
+```
 
 
 
