@@ -1,26 +1,20 @@
 const Singleton = (function() {
     let instance;
-
     function init() {
         const privateRandomNumber = Math.random();
-
         function privateMethod() {
             console.log("Private method called");
         }
-
         return {
-            publicMethod: function() {
-                console.log("Public method called");
-                privateMethod();
-            },
-            getRandomNumber: function() {
-                return privateRandomNumber;
-            }
+            getInstance: function() {
+                if (!instance) {
+                    instance = init();
+                }
+                return instance;
+            },}
+        return {
+            /**/
+        };
         };
     }
-    
 })();
-const singletonA = Singleton.getInstance();
-const singletonB = Singleton.getInstance();
-
-console.log("Are both instances the same?", singletonA === singletonB);

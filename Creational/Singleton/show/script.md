@@ -64,7 +64,7 @@ return { /**/ };
 ```
 Here THIS STEP clears the errors
 ```
-getInstance: function() {
+}getInstance: function() {
  if (!instance) {
      instance = init();
      }
