@@ -53,8 +53,7 @@ const Singleton = (function() {
             getRandomNumber: function() {
                 return privateRandomNumber;
             }
-        };
-``` 
+        }; 
     }
 
     return {
@@ -73,6 +72,8 @@ const Singleton = (function() {
 ```
 const Singleton = (function() { /**/ })();
 ```
+
+
 Warning occures .. will ignore for now
 ```
 let instance;
@@ -82,6 +83,7 @@ let instance;
 ```
 function init() { /**/ }
 ```
+
 warning (don't worrie
 ```
 const privateRandomNumber = Math.random();
@@ -98,6 +100,7 @@ return { /**/ };
 ```
 return { /**/ };
 ```
+
 Here THIS STEP clears the errors
 ```
 }getInstance: function() {
