@@ -73,16 +73,27 @@ getInstance: function() {
 /**/
 ```
 
-Last Step for block
+
+
 ```
 return {
-        getInstance: function() {
-            if (!instance) {
-                instance = init();
-            }
-            return instance;
-        }
-    };
+/**/ 
+};
+```
+
+
+
+
+
+
+Last Step for block
+```
+getInstance: function() {
+  if (!instance) {
+    instance = init();
+   }
+   return instance;
+}
 ```
 
 

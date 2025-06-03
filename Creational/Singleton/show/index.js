@@ -17,6 +17,10 @@ const Singleton = (function() {
                 return privateRandomNumber;
             }
         };
-
-
+    }
+    
 })();
+const singletonA = Singleton.getInstance();
+const singletonB = Singleton.getInstance();
+
+console.log("Are both instances the same?", singletonA === singletonB);
