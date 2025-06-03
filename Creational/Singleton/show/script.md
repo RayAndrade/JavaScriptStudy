@@ -1,4 +1,42 @@
+working backwards
 
+
+
+
+```
+function init() { /**/ }
+```
+
+```
+const privateRandomNumber = Math.random();
+
+        function privateMethod() {
+            console.log("Private method called");
+        }
+```
+
+
+
+
+```
+return {
+        getInstance: function() {
+            if (!instance) {
+                instance = init();
+            }
+            return instance;
+        }
+    };
+```
+
+
+
+```
+```
+
+
+
+after privte method
 ```
 const Singleton = (function() {
     let instance;
@@ -19,6 +57,7 @@ const Singleton = (function() {
                 return privateRandomNumber;
             }
         };
+``` 
     }
 
     return {
