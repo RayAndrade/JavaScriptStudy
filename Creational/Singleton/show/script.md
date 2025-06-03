@@ -1,7 +1,11 @@
+
+**START**
+
+```
+const Singleton = (function() { /**/ })();
+```
+
 working backwards
-
-
-
 
 ```
 function init() { /**/ }
@@ -28,13 +32,6 @@ return {
         }
     };
 ```
-
-
-
-
-```
-
-
 
 after privte method
 ```
