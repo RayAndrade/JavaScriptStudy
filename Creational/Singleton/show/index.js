@@ -13,5 +13,14 @@ const Singleton = (function() {
             getRandomNumber: function() {
                 return privateRandomNumber;
             }
-        };
-    })();
+        };    }
+
+    return {
+        getInstance: function() {
+            if (!instance) {
+                instance = init();
+            }
+            return instance;
+        }
+    };
+})();
