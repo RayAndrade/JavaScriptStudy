@@ -5,7 +5,19 @@
 const Singleton = (function() { /**/ })();
 ```
 
+```
+function init() { /**/  }
+```
+
+
+
+
+
+
 working backwards
+
+
+
 
 ```
 function init() { /**/ }
@@ -16,7 +28,7 @@ const privateRandomNumber = Math.random();
 
         function privateMethod() {
             console.log("Private method called");
-        }
+        } /**/
 ```
 
 
