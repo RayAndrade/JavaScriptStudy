@@ -37,6 +37,7 @@ const Singleton = (function() {
 ```
 const Singleton = (function() { /**/ })();
 ```
+Warning occures .. will ignore for now
 ```
 let instance;
 /**/
@@ -45,7 +46,7 @@ let instance;
 ```
 function init() { /**/ }
 ```
-
+warning (don't worrie
 ```
 const privateRandomNumber = Math.random();
 /**/
@@ -55,26 +56,38 @@ const privateRandomNumber = Math.random();
 function privateMethod() {
  console.log("Private method called");
 }
-/**/
+return { /**/ };
 ```
 
 ```
 return { /**/ };
 ```
-
+Here THIS STEP clears the errors
 ```
 getInstance: function() {
  if (!instance) {
      instance = init();
      }
      return instance;
-}
+};
 /**/
 ```
 
+Last Step for block
 ```
-)();
+return {
+        getInstance: function() {
+            if (!instance) {
+                instance = init();
+            }
+            return instance;
+        }
+    };
 ```
+
+
+
+
 
 ```
 const singletonA = Singleton.getInstance();
