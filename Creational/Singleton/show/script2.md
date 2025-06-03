@@ -1,59 +1,39 @@
-```
-const Singleton = (function() { /**/ })();
-```
 
 
 ```
-    let instance;
-    function init() {
-        const privateRandomNumber = Math.random();
-
-        function privateMethod() {
-            console.log("Private method called");
-        } /**/
+class Singleton { /**/ }
 ```
 
-```
-return {
-            publicMethod: function() {
-                console.log("Public method called");
-                privateMethod();
-            },
-            getRandomNumber: function() {
-                return privateRandomNumber;
-            }
-        }; /**/
-```
+If an instance already exists, return that instance immediately
+This prevents creating multiple instances — core behavior of Singleton
 
 ```
-   }
-
-    return {
-        getInstance: function() {
-            if (!instance) {
-                instance = init();
-            }
-            return instance;
-        }
-    };
+if (Singleton.instance) {
+            return Singleton.instance;
+        }/**/
 ```
 
-
+A public method exposed to external callers.
+Inside public method, we call the private-looking helper (still public in JS).
 ```
-const singletonA = Singleton.getInstance();
-const singletonB = Singleton.getInstance();
-```
-
-```
-singletonA.publicMethod();
-```
-
-```
-console.log("Singleton A random number: " + singletonA.getRandomNumber());
-console.log("Singleton B random number: " + singletonB.getRandomNumber());
+publicMethod() {
+        console.log("Public method called");
+        this.privateMethod();
+    }/**/
 ```
 
+A public getter function to retrieve the internal privateRandomNumber.
+```
+getRandomNumber() {
+          return this.privateRandomNumber;
+    }/**/
+```
+
+Technically, this is still a public method.
+In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
 
 ```
-console.log("Are both instances the same?", singletonA === singletonB);
+privateMethod() {
+        console.log("Private method called");
+    }
 ```

@@ -34,7 +34,7 @@ class Singleton {
     }
 
     privateMethod() {
-        // Technically this is still a public method.
+        // Technically, this is still a public method.
         // In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
         console.log("Private method called");
     }
