@@ -12,6 +12,8 @@ const Singleton = (function() {
             publicMethod: function() {
                 console.log("Public method called");
                 privateMethod();
+            }           ,getRandomNumber: function() {
+                return privateRandomNumber;
             }
         };
     }

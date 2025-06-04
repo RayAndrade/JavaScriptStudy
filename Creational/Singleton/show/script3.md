@@ -1,7 +1,7 @@
 
 
 ```
-           ,getRandomNumber: function() {
+,getRandomNumber: function() {
                 return privateRandomNumber;
             }
 ```
