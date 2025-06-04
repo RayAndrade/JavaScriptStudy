@@ -32,8 +32,7 @@ const Singleton = (function() { /**/ })();
 ```
         function privateMethod() {
             console.log("Private method called");
-        }
-
+        } /**/
 ```
 
 
