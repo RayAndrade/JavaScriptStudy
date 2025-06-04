@@ -25,7 +25,7 @@ const Singleton = (function() { /**/ })();
     function init() {
         const privateRandomNumber = Math.random();
     }
-
+    /**/
 ```
 
 
