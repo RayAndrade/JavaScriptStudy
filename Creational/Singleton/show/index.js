@@ -12,19 +12,10 @@ const Singleton = (function() {
             publicMethod: function() {
                 console.log("Public method called");
                 privateMethod();
-            },
-            getRandomNumber: function() {
-                return privateRandomNumber;
             }
         };
     }
 
     return {
-        getInstance: function() {
-            if (!instance) {
-                instance = init();
-            }
-            return instance;
-        }
     };
 })();

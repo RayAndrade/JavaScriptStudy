@@ -1,5 +1,10 @@
 
 
+```
+           ,getRandomNumber: function() {
+                return privateRandomNumber;
+            }
+```
 
 
 
