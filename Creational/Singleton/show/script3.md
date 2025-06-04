@@ -2,8 +2,10 @@
 const Singleton = (function() { /**/ })();
 ```
 
+error move to end
 ```
     let instance;
+    function init() {
 ```
 
 
