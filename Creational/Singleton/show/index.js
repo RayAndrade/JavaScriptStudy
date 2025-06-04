@@ -1,5 +1,5 @@
-const Singleton = (function() { {
+const Singleton = (function() {{
+    let instance;
     return {
     };
-}
-})();
+} })();
