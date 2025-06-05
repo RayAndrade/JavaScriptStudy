@@ -1,35 +1,48 @@
-const Singleton = ( function() {
-    let instance;
+function Subject() {
+    this.observers = [];
+}
 
-    function init() {
-        const privateRandomNumber = Math.random();
-        function privateMethod() {
-            console.log("Private method called");
-        }
-       return {
-           publicMethod: function() {
-               console.log("Public method called");
-               privateMethod();
-           }           ,
-           getRandomNumber: function() {
-               return privateRandomNumber;
-           }
-        };
+Subject.prototype = {
+    subscribe: function(observer) {
+        this.observers.push(observer);
+    },
+
+    unsubscribe: function(observer) {
+        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
+        });
+    },
+
+    notify: function(data) {
+        this.observers.forEach(function(observer) {
+            observer.update(data);
+        });
     }
+};
 
-    return {
-        getInstance: function() {
-            if (!instance) {
-                instance = init();
-            }
-            return instance;
-        }
-    };
-})();
+function Observer(name) {
+    this.name = name;
+}
 
-const singletonA = Singleton.getInstance();
-const singletonB = Singleton.getInstance();
-console.log("Singleton A random number: " + singletonA.getRandomNumber());
-console.log("Singleton B random number: " + singletonB.getRandomNumber());
-console.log("Are both instances the same?", singletonA === singletonB);
+Observer.prototype = {
+    update: function(data) {
+        console.log(this.name + " received data: " + data);
+    }
+};
 
+// Test code
+const subject = new Subject();
+
+const observerA = new Observer("Observer A");
+const observerB = new Observer("Observer B");
+const observerC = new Observer("Observer C");
+
+subject.subscribe(observerA);
+subject.subscribe(observerB);
+subject.subscribe(observerC);
+
+subject.notify("First message");
+
+subject.unsubscribe(observerB);
+
+subject.notify("Second message");
