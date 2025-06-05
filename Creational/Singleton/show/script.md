@@ -1,5 +1,9 @@
+
+
+
 ```
-const Singleton = ( /**/
+/* 1 */
+const Singleton = ( /* 2 */
 })();
 ```
 
@@ -7,22 +11,26 @@ const Singleton = ( /**/
 
 
 ```
+/* 2 */
 function() {
 
     return {
 
-    };
+    }; /* 3 */
 ```
 
 
 ```
+        /* 3 */
         let instance;
+        /* 4 */
 ```
 
 
 ```
+        /* 4 */
         function init() { 
-             /*x*/
+             /* 5 */
         
 
 
@@ -33,12 +41,14 @@ function() {
 ```
 
 ```
-        const privateRandomNumber = Math.random();/*x*/
+        /* 5 */
+        const privateRandomNumber = Math.random();/* 6 */
 ```
 
 
 
 ```
+        /* 6 */
         function privateMethod() {
             console.log("Private method called");
         } /* toto return */
@@ -49,7 +59,7 @@ function() {
          publicMethod: function() {
                 console.log("Public method called");
                 privateMethod();
-            } /*x*/
+            } /* 7 */
 ```
 
 
