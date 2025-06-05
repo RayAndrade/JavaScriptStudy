@@ -1,7 +1,4 @@
-const Singleton = (function() {
-    let instance;
-    function init() {
-})();
+
 
 /*
 const singletonA = Singleton.getInstance();

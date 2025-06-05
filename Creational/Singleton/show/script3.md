@@ -6,8 +6,13 @@ error move to end
 ```
     let instance;
     function init() {
+     /**/
 ```
 
+```
+      const privateRandomNumber = Math.random();
+      /**/
+```
 
 ```
     function init() {
@@ -51,9 +56,11 @@ error move to end
 
 Last Step
 ```
-            ,
-            getRandomNumber: function() {
-                return privateRandomNumber;
+         getInstance: function() {
+                if (!instance) {
+                    instance = init();
+                }
+                return instance;
             }
 ```
 
