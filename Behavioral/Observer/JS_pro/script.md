@@ -4,9 +4,41 @@ function Subject() {
     this.observers = [];  
 }
 ```
+Attach methods to Subject's prototype (shared among all instances)
+```
+Subject.prototype = {
+    /**/
+}
+```
+Purpose: add an observer to the list (registering it for future notifications)
+```
+subscribe: function(observer) {
+        
+        this.observers.push(observer);
+    }
+```
+at end of "}"
+Purpose: remove an observer from the list (unsubscribing it)
+```
+        unsubscribe: function(observer) {
+        
+        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
+        });
+    },
+```
 
+```        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
 
-
+```
+Purpose of loop: iterate through observers array
+Keeps only those observers which are not equal to the one being unsubscribed
+```
+        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
+        });
+```
 
 
 Test Code<br/>
