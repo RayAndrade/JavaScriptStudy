@@ -1,50 +1,60 @@
 
+
+start : 1
 ```
-/* at the top 1 */
 function Subject() {
     this.observers = [];
 }
-/* 2 */
 ```
+2 is next line
 
-```
-     /* 2 */
+
+2 
+...
      subscribe: function(observer) { /* 3 */ },
 ```
+3 iside as noted
 
-
+3
 ```
-        /* 3 */
         this.observers.push(observer);
-        /* 4 outside this block */
 ```
+4 outside this block
 
+4
 ```
-    /* 4 */
     unsubscribe: function(observer) { /* 5 */ },
 ```
+5 inside as noted
 
+5
 ```
         this.observers = this.observers.filter(function(item) {
             return item !== observer;
         });
-        /* next */
 ```
+next 6
 
+6 next
 ```
      notify: function(data) {
         this.observers.forEach(function(observer) {
             observer.update(data);
         });
-    } /* past '}' */
+    }
 ```
+7 past '}' 
 
+
+7
 ```
 function Observer(name) {
     this.name = name;
 }
 ```
+8 next line
 
+8
 ```
 Observer.prototype = {
     update: function(data) {
@@ -52,6 +62,44 @@ Observer.prototype = {
     }
 };
 ```
+done
+
+code check
+```
+function Subject() {
+    this.observers = [];
+}
+
+Subject.prototype = {
+    subscribe: function(observer) {
+        this.observers.push(observer);
+    },
+
+    unsubscribe: function(observer) {
+        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
+        });
+    },
+
+    notify: function(data) {
+        this.observers.forEach(function(observer) {
+            observer.update(data);
+        });
+    }
+};
+
+function Observer(name) {
+    this.name = name;
+}
+
+Observer.prototype = {
+    update: function(data) {
+        console.log(this.name + " received data: " + data);
+    }
+};
+
+```
+
 
 
 test
