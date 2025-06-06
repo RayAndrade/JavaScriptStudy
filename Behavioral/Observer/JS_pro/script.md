@@ -8,8 +8,7 @@ function Subject() {
 ```
 2 is next line
 
-
-*2* 
+2 
 ...
      subscribe: function(observer) { /* 3 */ },
 ```
