@@ -4,6 +4,7 @@ Purpose: array to store all registered observers (subscribers)
 function Subject() {
     this.observers = [];
 }
+/**/
 ```
 
 ```
