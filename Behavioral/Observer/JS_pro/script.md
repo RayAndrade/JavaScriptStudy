@@ -57,7 +57,7 @@ Observer.prototype = {
 finished
 ```
 
-f// Constructor function for Subject (the observable object that maintains the list of observers)
+// Constructor function for Subject (the observable object that maintains the list of observers)
 function Subject() {
     this.observers = [];
     // Purpose: array to store all registered observers (subscribers)
@@ -107,7 +107,7 @@ Observer.prototype = {
 // === Test Code ===
 
 // Create new subject instance (the object being observed)
-/*
+
 
 const subject = new Subject();
 
@@ -129,7 +129,5 @@ subject.unsubscribe(observerB);
 
 // Trigger second notification: observers A and C will receive "Second message"
 subject.notify("Second message");
-*/
-
 
 ```
