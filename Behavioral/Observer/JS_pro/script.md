@@ -10,7 +10,7 @@ function Subject() {
 
 2 
 ...
-     subscribe: function(observer) { /* 3 */ },
+subscribe: function(observer) { /* 3 */ },
 ```
 3 iside as noted
 
