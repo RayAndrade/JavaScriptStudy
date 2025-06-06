@@ -3,6 +3,7 @@ Purpose: array to store all registered observers (subscribers)
 function Subject() {
     this.observers = []; 
 }
+/**/
 ```
 Attach methods to Subject's prototype (shared among all instances)
 ```
