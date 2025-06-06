@@ -1,7 +1,7 @@
 Purpose: array to store all registered observers (subscribers)
 ```
 function Subject() {
-    this.observers = [];  
+    this.observers = []; 
 }
 ```
 Attach methods to Subject's prototype (shared among all instances)
@@ -15,11 +15,12 @@ Purpose: add an observer to the list (registering it for future notifications)
 subscribe: function(observer) {
         
         this.observers.push(observer);
-    }
+    }/**/
 ```
 at end of "}"
 Purpose: remove an observer from the list (unsubscribing it)
 ```
+,
         unsubscribe: function(observer) {
         
         this.observers = this.observers.filter(function(item) {
@@ -28,7 +29,8 @@ Purpose: remove an observer from the list (unsubscribing it)
     },
 ```
 
-```        this.observers = this.observers.filter(function(item) {
+``` 
+,            this.observers = this.observers.filter(function(item) {
             return item !== observer;
 
 ```
@@ -81,7 +83,7 @@ Copy Past
 ```
 // Constructor function for Subject (the observable object that maintains the list of observers)
 function Subject() {
-    this.observers = [];  
+    this.observers = []; 
     // Purpose: array to store all registered observers (subscribers)
 }
 
@@ -113,7 +115,7 @@ Subject.prototype = {
 
 // Constructor function for Observer (subscribing client)
 function Observer(name) {
-    this.name = name;  
+    this.name = name; 
     // Purpose: store a name identifier for each observer (to identify output)
 }
 
