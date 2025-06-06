@@ -1,3 +1,12 @@
+Purpose: array to store all registered observers (subscribers)
+```
+function Subject() {
+    this.observers = [];  
+}
+```
+
+
+
 
 
 Test Code<br/>
