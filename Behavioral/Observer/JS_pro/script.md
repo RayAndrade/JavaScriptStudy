@@ -26,10 +26,11 @@ unsubscribe: function(observer) {
         this.observers = this.observers.filter(function(item) {
             return item !== observer;
         });
-    },
+    }
 ```
 Purpose: notify all current observers, passing them the updated data => Purpose of loop: iterate through each registered observer and call their update() method
 ```
+,
     notify: function (data) {
         this.observers.forEach(function (observer) {
             observer.update(data);
@@ -40,6 +41,66 @@ Purpose: notify all current observers, passing them the updated data => Purpose 
 
 
 
+outside
+
+
+Constructor function for Observer (subscribing client) => Purpose: store a name identifier for each observer (to identify output)
+```
+function Observer(name) {
+    this.name = name;
+    // 
+}
+```
+
+
+Attach methods to Observer's prototype (shared among all observer instances) => Purpose: receive notification from subject, and handle incoming data
+```
+Observer.prototype = {
+    update: function(data) {
+        console.log(this.name + " received data: " + data);
+    }
+};
+```
+
+
+
+Constructor function for Subject (the observable object that maintains the list of observers) => Purpose: array to store all registered observers (subscribers)
+```
+function Subject() {
+    this.observers = [];
+}
+```
+
+
+```
+
+Attach methods to Subject's prototype (shared among all instances) =>  Purpose: array to store all registered observers (subscribers)
+```
+Subject.prototype = {
+    subscribe: function(observer) {
+        this.observers.push(observer);
+    }
+```
+
+Purpose: remove an observer from the list (unsubscribing it) => Purpose of loop: iterate through observers array,Keeps only those observers which are not equal to the one being unsubscribed
+```
+,
+    unsubscribe: function(observer) {
+        this.observers = this.observers.filter(function(item) {
+            return item !== observer;
+        });
+    }
+```
+Purpose: notify all current observers, passing them the updated data = > Purpose of loop: iterate through each registered observer and call their update() method
+```
+,
+    notify: function (data) {
+        this.observers.forEach(function (observer) {
+            observer.update(data);
+        });
+    }
+};
+```
 
 Constructor function for Observer (subscribing client)
 ```
@@ -49,61 +110,9 @@ function Observer(name) {
 }
 ```
 
-
 Attach methods to Observer's prototype (shared among all observer instances)
-// Purpose: receive notification from subject, and handle incoming data
+
 ```
-Observer.prototype = {
-    update: function(data) {
-        console.log(this.name + " received data: " + data);
-    }
-};
-```
-
-
-
-finished
-```
-
-// Constructor function for Subject (the observable object that maintains the list of observers)
-function Subject() {
-    this.observers = [];
-    // Purpose: array to store all registered observers (subscribers)
-}
-
-// Attach methods to Subject's prototype (shared among all instances)
-Subject.prototype = {
-
-    subscribe: function(observer) {
-        // Purpose: add an observer to the list (registering it for future notifications)
-        this.observers.push(observer);
-    },
-
-    unsubscribe: function(observer) {
-        // Purpose: remove an observer from the list (unsubscribing it)
-        this.observers = this.observers.filter(function(item) {
-            // Purpose of loop: iterate through observers array
-            // Keeps only those observers which are not equal to the one being unsubscribed
-            return item !== observer;
-        });
-    },
-
-    notify: function (data) {
-        // Purpose: notify all current observers, passing them the updated data
-        this.observers.forEach(function (observer) {
-            // Purpose of loop: iterate through each registered observer and call their update() method
-            observer.update(data);
-        });
-    }
-};
-
-// Constructor function for Observer (subscribing client)
-function Observer(name) {
-    this.name = name;
-    // Purpose: store a name identifier for each observer (to identify output)
-}
-
-// Attach methods to Observer's prototype (shared among all observer instances)
 Observer.prototype = {
 
     update: function(data) {
@@ -111,6 +120,7 @@ Observer.prototype = {
         console.log(this.name + " received data: " + data);
     }
 };
+```
 
 // === Test Code ===
 
