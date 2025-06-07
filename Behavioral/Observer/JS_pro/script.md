@@ -126,28 +126,34 @@ Observer.prototype = {
 
 // === Test Code ===
 
-// Create new subject instance (the object being observed)
+Create new subject instance (the object being observed)
 
-
+```
 const subject = new Subject();
+```
 
-// Create multiple observer instances (clients who want to receive updates)
+Create multiple observer instances (clients who want to receive updates)
+```
 const observerA = new Observer("Observer A");
 const observerB = new Observer("Observer B");
 const observerC = new Observer("Observer C");
-
-// Subscribe observers A, B, and C to the subject
+```
+Subscribe observers A, B, and C to the subject
+```
 subject.subscribe(observerA);
 subject.subscribe(observerB);
 subject.subscribe(observerC);
+```
 
-// Trigger notification: all current subscribers receive "First message"
+Trigger notification: all current subscribers receive "First message"
+```
 subject.notify("First message");
-
-// Unsubscribe observerB (it will no longer receive updates)
+```
+Unsubscribe observerB (it will no longer receive updates)
+```
 subject.unsubscribe(observerB);
-
-// Trigger second notification: observers A and C will receive "Second message"
+```
+Trigger second notification: observers A and C will receive "Second message"
+```
 subject.notify("Second message");
-
 ```
