@@ -7,6 +7,8 @@ function Subject() {
 /**/
 ```
 
+Next
+
 ```
 Subject.prototype = { 
       /**/
@@ -28,6 +30,7 @@ unsubscribe: function(observer) {
         });
     }
 ```
+
 Purpose: notify all current observers, passing them the updated data => Purpose of loop: iterate through each registered observer and call their update() method
 ```
 ,
