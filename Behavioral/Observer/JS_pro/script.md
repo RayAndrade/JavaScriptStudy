@@ -55,8 +55,9 @@ function Observer(name) {
 }
 ```
 
-
 Attach methods to Observer's prototype (shared among all observer instances) => Purpose: receive notification from subject, and handle incoming data
+
+
 ```
 Observer.prototype = {
     update: function(data) {
@@ -66,16 +67,14 @@ Observer.prototype = {
 ```
 
 
-
 Constructor function for Subject (the observable object that maintains the list of observers) => Purpose: array to store all registered observers (subscribers)
+
 ```
 function Subject() {
     this.observers = [];
 }
 ```
 
-
-```
 
 Attach methods to Subject's prototype (shared among all instances) =>  Purpose: array to store all registered observers (subscribers)
 ```
