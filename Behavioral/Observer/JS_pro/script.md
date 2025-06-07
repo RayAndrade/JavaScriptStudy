@@ -1,4 +1,4 @@
-
+**01**
 Purpose: array to store all registered observers (subscribers)
 ```
 function Subject() {
@@ -6,7 +6,7 @@ function Subject() {
 }
 /**/
 ```
-
+**02**
 Next
 
 ```
@@ -14,6 +14,8 @@ Subject.prototype = {
       /**/
 }; 
 ```
+
+**03**
 Purpose: add an observer to the list (registering it for future notifications)
 ```
 subscribe: function(observer) {
@@ -21,6 +23,7 @@ subscribe: function(observer) {
     }/**/
 ```
 
+**04**
 Purpose: remove an observer from the list (unsubscribing it) => Purpose of loop: iterate through observers array, Keeps only those observers which are not equal to the one being unsubscribed
 ```
 ,
@@ -31,6 +34,7 @@ unsubscribe: function(observer) {
     }
 ```
 
+**05**
 Purpose: notify all current observers, passing them the updated data => Purpose of loop: iterate through each registered observer and call their update() method
 ```
 ,
@@ -46,7 +50,7 @@ Purpose: notify all current observers, passing them the updated data => Purpose 
 
 outside
 
-
+**06**
 Constructor function for Observer (subscribing client) => Purpose: store a name identifier for each observer (to identify output)
 ```
 function Observer(name) {
@@ -55,8 +59,8 @@ function Observer(name) {
 }
 ```
 
+**07**
 Attach methods to Observer's prototype (shared among all observer instances) => Purpose: receive notification from subject, and handle incoming data
-
 
 ```
 Observer.prototype = {
@@ -66,16 +70,15 @@ Observer.prototype = {
 };
 ```
 
-
+**08**
 Constructor function for Subject (the observable object that maintains the list of observers) => Purpose: array to store all registered observers (subscribers)
-
 ```
 function Subject() {
     this.observers = [];
 }
 ```
 
-
+**09**
 Attach methods to Subject's prototype (shared among all instances) =>  Purpose: array to store all registered observers (subscribers)
 ```
 Subject.prototype = {
@@ -84,6 +87,7 @@ Subject.prototype = {
     }
 ```
 
+**09**
 Purpose: remove an observer from the list (unsubscribing it) => Purpose of loop: iterate through observers array,Keeps only those observers which are not equal to the one being unsubscribed
 ```
 ,
@@ -93,6 +97,7 @@ Purpose: remove an observer from the list (unsubscribing it) => Purpose of loop:
         });
     }
 ```
+**10**
 Purpose: notify all current observers, passing them the updated data = > Purpose of loop: iterate through each registered observer and call their update() method
 ```
 ,
@@ -103,7 +108,7 @@ Purpose: notify all current observers, passing them the updated data = > Purpose
     }
 };
 ```
-
+**11**
 Constructor function for Observer (subscribing client)
 ```
 function Observer(name) {
@@ -111,9 +116,8 @@ function Observer(name) {
     // Purpose: store a name identifier for each observer (to identify output)
 }
 ```
-
+**12**
 Attach methods to Observer's prototype (shared among all observer instances)
-
 ```
 Observer.prototype = {
 
@@ -126,18 +130,20 @@ Observer.prototype = {
 
 // === Test Code ===
 
+**13**
 Create new subject instance (the object being observed)
 
 ```
 const subject = new Subject();
 ```
-
+**14**
 Create multiple observer instances (clients who want to receive updates)
 ```
 const observerA = new Observer("Observer A");
 const observerB = new Observer("Observer B");
 const observerC = new Observer("Observer C");
 ```
+**15**
 Subscribe observers A, B, and C to the subject
 ```
 subject.subscribe(observerA);
@@ -146,13 +152,16 @@ subject.subscribe(observerC);
 ```
 
 Trigger notification: all current subscribers receive "First message"
+**16**
 ```
 subject.notify("First message");
 ```
+**17**
 Unsubscribe observerB (it will no longer receive updates)
 ```
 subject.unsubscribe(observerB);
 ```
+**18**
 Trigger second notification: observers A and C will receive "Second message"
 ```
 subject.notify("Second message");
