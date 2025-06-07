@@ -1,4 +1,4 @@
-/* at the top 1 */
+/* at the top not observer 1 */
 function Subject() {
     this.observers = [];
 }
