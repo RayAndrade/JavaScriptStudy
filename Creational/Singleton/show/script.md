@@ -50,7 +50,7 @@ step **07**
             getRandomNumber: function() {
                 return privateRandomNumber;
             }
-            // pass the }; /*08*/
+            // pass the };} /*08*/
 ```
 
 ```
