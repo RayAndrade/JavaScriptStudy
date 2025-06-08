@@ -1,29 +1,41 @@
-
-
-
-
+Define the Singleton class
 ```
-// Define the Singleton class
-class Singleton {
+class Singleton { 
+/**/ 
+}
+```
 
+The constructor is automatically called when new Singleton() is executed
+```
     constructor() {
-        // The constructor is automatically called when new Singleton() is executed
-
+    /**/ 
+    }
+```
+If an instance already exists, return that instance immediately = This prevents creating multiple instances — core behavior of Singleton
+```
         if (Singleton.instance) {
-            // If an instance already exists, return that instance immediately
-            // This prevents creating multiple instances — core behavior of Singleton
             return Singleton.instance;
         }
-
-        // If no instance exists yet, we initialize internal state:
+        /**/
+```
+If no instance exists yet, we initialize internal state:
+``` 
         this.privateRandomNumber = Math.random();
-        // Each Singleton instance gets a random number when first created.
-        // But since only one instance exists, this value stays fixed for all uses.
+        /**/
+``` 
 
+Each Singleton instance gets a random number when first created.
+But since only one instance exists, this value stays fixed for all uses.
+```
         Singleton.instance = this;
+```
         // Save this current object as the static instance.
         // Future calls to new Singleton() will reuse this object.
+
+```
+
     }
+```
 
     publicMethod() {
         // A public method exposed to external callers.
