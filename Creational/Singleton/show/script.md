@@ -1,25 +1,36 @@
 step **01**
 ```
 const Singleton = (function() { 
-/**02**/ 
+/*02*/ 
 }
 ```
 
 step **02** Private instance variable
 ```
 let instance;
-/**03**/ 
+/*03*/ 
 ```
+
+step **03** Private initialization function
+```
+function init() { 
+/*04*/
+}
+```
+
+step **04** Private data and methods
+```
+const privateRandomNumber = Math.random();
+/*05*/
+```
+
 
 
 
 complete project
 ```
 const Singleton = (function() {
-    // 
     let instance;
-
-    // Private initialization function
     function init() {
         // Private data and methods
         const privateRandomNumber = Math.random();
