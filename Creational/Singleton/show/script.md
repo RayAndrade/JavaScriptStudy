@@ -2,7 +2,7 @@ step **01**
 ```
 const Singleton = (function() { 
 /*02*/ 
-}
+})();
 ```
 
 step **02** Private instance variable

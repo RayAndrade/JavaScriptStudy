@@ -1,3 +1,4 @@
 const Singleton = (function() {
-    /*02*/
+    let instance;
+    }
 })();
