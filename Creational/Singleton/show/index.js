@@ -15,4 +15,5 @@ const Singleton = (function() {
             return privateRandomNumber;
         }
     };
+    
 })();
