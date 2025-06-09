@@ -1,32 +1,32 @@
-step **01**
+step **1**
 ```
 const Singleton = (function() { 
 /*2*/ 
 })();
 ```
 
-step **02** Private instance variable
+step **2** Private instance variable
 ```
 let instance;
     return {
     };
-/*03*/ 
+/*3*/ 
 ```
 
 step **03** Private initialization function
 ```
 function init() { 
-/*04*/
+/*4*/
 }
 ```
 
-step **04** Private data and methods
+step **4** Private data and methods
 ```
 const privateRandomNumber = Math.random();
-/*05*/
+/*5*/
 ```
 
-step **05**
+step **5**
 ```
 function privateMethod() {
             console.log("Private method called");
@@ -34,7 +34,7 @@ function privateMethod() {
         /*06*/
 ```
 
-step **06** gpto after return
+step **6** gpto after return
 
 ```
  publicMethod: function() {
@@ -44,7 +44,7 @@ step **06** gpto after return
             /*07*/
 ```
 
-step **07**
+step **7**
 ```
 ,
             getRandomNumber: function() {
@@ -99,7 +99,9 @@ const Singleton = (function() {
         }
     };
 })();
+```
 
+```
 // Test code
 const singletonA = Singleton.getInstance();
 const singletonB = Singleton.getInstance();
