@@ -1,33 +1,8 @@
-Start
-```
 const Singleton = (function() {
-    return {
-
-    };
-})();
-```
-
-
-Private instance variable
-```
+    // Private instance variable
     let instance;
-```
 
-
-Private initialization function
-```
-function init() {
-        // Private data and methods
-        const privateRandomNumber = Math.random();
-
-        function privateMethod() {
-            console.log("Private method called");
-        }
-    }
-```
-
-
-```
+    // Private initialization function
     function init() {
         // Private data and methods
         const privateRandomNumber = Math.random();
@@ -36,11 +11,6 @@ function init() {
             console.log("Private method called");
         }
 
-```
-
-
-After Init
-```
         return {
             // Public methods and properties
             publicMethod: function() {
@@ -51,21 +21,19 @@ After Init
                 return privateRandomNumber;
             }
         };
-```
+    }
 
-Inside LAST return
-```
-getInstance: function() {
+    // Public interface to get the Singleton instance
+    return {
+        getInstance: function() {
             if (!instance) {
                 instance = init();
             }
             return instance;
         }
-```
+    };
+})();
 
-
-Test
-```
 const singletonA = Singleton.getInstance();
 const singletonB = Singleton.getInstance();
 
@@ -74,5 +42,3 @@ console.log("Singleton A random number: " + singletonA.getRandomNumber());
 console.log("Singleton B random number: " + singletonB.getRandomNumber());
 
 console.log("Are both instances the same?", singletonA === singletonB);
-```
-
