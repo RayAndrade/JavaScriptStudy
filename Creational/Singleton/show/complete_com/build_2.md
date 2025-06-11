@@ -35,7 +35,17 @@ A public getter function to retrieve the internal privateRandomNumber.
          getRandomNumber() {
         return this.privateRandomNumber;
     }
+    /**/
 ```
+
+Technically this is still a public method.
+In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
+ 
+```js
+privateMethod() {
+        console.log("Private method called");
+    }
+```	
 
 
 
