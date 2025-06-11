@@ -1,5 +1,14 @@
-class Singleton {
 
+**Define the Singleton class**
+```js
+class Singleton { 
+/**/
+
+}
+```
+
+next
+```
     constructor() {
         // The constructor is automatically called when new Singleton() is executed
 
@@ -63,3 +72,5 @@ console.log("Singleton B random number: " + singletonB.getRandomNumber());
 console.log("Are both instances the same?", singletonA === singletonB);
 // Strict equality check: confirms singletonA and singletonB are actually the same object.
 
+
+```
