@@ -3,11 +3,26 @@
 ```js
 class Singleton { 
 /**/
-
 }
 ```
 
-next
+The constructor is automatically called when new Singleton() is executed
+```js
+    constructor() {
+    /**/
+    }
+```
+ If an instance already exists, return that instance immediately
+ This prevents creating multiple instances — core behavior of Singleton
+ ```js
+        if (Singleton.instance) {
+            return Singleton.instance;
+        }
+```
+
+
+
+The constructor is automatically called when new Singleton() is executed
 ```
     constructor() {
         // The constructor is automatically called when new Singleton() is executed
