@@ -2,33 +2,33 @@
 **Define the Singleton class**
 ```js
 class Singleton { 
-/**/
+/*1*/
 }
 ```
 
-The constructor is automatically called when new Singleton() is executed
+1. The constructor is automatically called when new Singleton() is executed
 ```js
     constructor() {
-    /**/
+    /*2*/
     }
 ```
- If an instance already exists, return that instance immediately
+2. If an instance already exists, return that instance immediately
  This prevents creating multiple instances — core behavior of Singleton
  ```js
         if (Singleton.instance) {
             return Singleton.instance;
         }
-        /**/
+        /*3*/
 ```
 If no instance exists yet, we initialize internal state:
 
-Each Singleton instance gets a random number when first created.
+3. Each Singleton instance gets a random number when first created.
 But since only one instance exists, this value stays fixed for all uses.
 ```js
 this.privateRandomNumber = Math.random();
-/**/
+/*4*/
 ```
-
+4. 
 ```js
 Singleton.instance = this; /*goto x*/
 ```
@@ -39,16 +39,22 @@ A public getter function to retrieve the internal privateRandomNumber.
          getRandomNumber() {
         return this.privateRandomNumber;
     }
-    /**/
+    /*6*/
 ```
 
 Technically this is still a public method.
-In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
+7. In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
 ```js
 privateMethod() {
         console.log("Private method called");
-    } /*goto ?*/
+    } /*goto next line*/
 ```	
+8. 
+```js
+   publicMethod() { 
+   /*9*/
+   }
+```
 
 
 

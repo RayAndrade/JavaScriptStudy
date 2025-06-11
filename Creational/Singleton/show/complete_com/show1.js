@@ -4,6 +4,6 @@ class Singleton {
             return Singleton.instance;
         }
         this.privateRandomNumber = Math.random();
-        Singleton.instance = this;
+        Singleton.instance = this; /*goto x*/
     }
 }
