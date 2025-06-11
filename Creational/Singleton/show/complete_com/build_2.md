@@ -51,8 +51,12 @@ next
 // Initialize static property manually (outside class body)
 Singleton.instance = null;
 // This guarantees that when the first object is created, Singleton.instance is initially null.
+```
 
-// === Testing code ===
+
+```
+=== Testing code ===
+```js
 
 const singletonA = new Singleton();
 // First call to constructor: since instance is null, constructor creates the instance.
