@@ -1,6 +1,6 @@
 ```js
+**Define the Singleton class**
 
-// Define the Singleton class
 class Singleton {
 
     constructor() {
