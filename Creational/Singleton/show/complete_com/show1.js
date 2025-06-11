@@ -1,4 +1,3 @@
-
 class Singleton {
     constructor() {
         if (Singleton.instance) {
@@ -6,5 +5,9 @@ class Singleton {
         }
         this.privateRandomNumber = Math.random();
         Singleton.instance = this;
+    }
+    getRandomNumber() {
+        // A public getter function to retrieve the internal privateRandomNumber.
+        return this.privateRandomNumber;
     }
 }

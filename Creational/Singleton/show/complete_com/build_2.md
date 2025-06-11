@@ -30,6 +30,15 @@ this.privateRandomNumber = Math.random();
 ```
 Save this current object as the static instance. Future calls to new Singleton() will reuse this object. 
 **go outside '}'**
+A public getter function to retrieve the internal privateRandomNumber.
+```js
+         getRandomNumber() {
+        return this.privateRandomNumber;
+    }
+```
+
+
+
 ```js
 Singleton.instance = this;
 ```
