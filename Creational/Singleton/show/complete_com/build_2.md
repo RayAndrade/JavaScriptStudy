@@ -34,6 +34,50 @@ Save this current object as the static instance. Future calls to new Singleton()
 Singleton.instance = this;
 ```
 
+```js
+    publicMethod() {
+    	console.log("Public method called");
+    	this.privateMethod();
+    }
+```
+next
+```js
+    getRandomNumber() {
+        // A public getter function to retrieve the internal privateRandomNumber.
+        return this.privateRandomNumber;
+    }
+
+    privateMethod() {
+        // Technically this is still a public method.
+        // In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
+        console.log("Private method called");
+    }
+```
+
+last
+
+```js
+    publicMethod() {
+        // A public method exposed to external callers.
+        console.log("Public method called");
+
+        this.privateMethod();
+        // Inside public method, we call the private-looking helper (still public in JS).
+    }
+
+    getRandomNumber() {
+        // A public getter function to retrieve the internal privateRandomNumber.
+        return this.privateRandomNumber;
+    }
+
+    privateMethod() {
+        // Technically this is still a public method.
+        // In pre-ES2022 JS, private methods are often faked by naming convention (e.g., _privateMethod).
+        console.log("Private method called");
+    }
+```
+
+
 
 The constructor is automatically called when new Singleton() is executed
 ```
