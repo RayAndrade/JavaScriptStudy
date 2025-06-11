@@ -18,8 +18,21 @@ The constructor is automatically called when new Singleton() is executed
         if (Singleton.instance) {
             return Singleton.instance;
         }
+        /**/
 ```
+If no instance exists yet, we initialize internal state:
 
+Each Singleton instance gets a random number when first created.
+But since only one instance exists, this value stays fixed for all uses.
+```
+this.privateRandomNumber = Math.random();
+/**/
+```
+Save this current object as the static instance. Future calls to new Singleton() will reuse this object. 
+**go outside '}'**
+```js
+Singleton.instance = this;
+```
 
 
 The constructor is automatically called when new Singleton() is executed
