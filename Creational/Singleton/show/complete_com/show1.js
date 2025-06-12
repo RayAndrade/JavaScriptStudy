@@ -6,4 +6,7 @@ class Singleton {
         this.privateRandomNumber = Math.random();
         Singleton.instance = this; /*goto x*/
     }
+    getRandomNumber() {
+        return this.privateRandomNumber;
+    }
 }

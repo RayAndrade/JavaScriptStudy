@@ -26,10 +26,9 @@ If no instance exists yet, we initialize internal state:
 But since only one instance exists, this value stays fixed for all uses.
 ```js
 this.privateRandomNumber = Math.random();
-/*4*/
-```
 4. 
 ```js
+/*4*/
 Singleton.instance = this; /*goto x*/
 ```
 Save this current object as the static instance. Future calls to new Singleton() will reuse this object. 
