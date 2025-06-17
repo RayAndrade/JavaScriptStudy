@@ -30,17 +30,3 @@ console.log("Singleton B random number: " + singletonB.getRandomNumber());
 console.log("Are both instances the same?", singletonA === singletonB);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
