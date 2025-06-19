@@ -1,5 +1,7 @@
+
 // AbstractFactory.js
 // Defines the interface for creating abstract product families
+```
 class AbstractFactory {
     createProductA() {
         throw new Error("createProductA() must be implemented."); // Abstract method, must be overridden
@@ -8,6 +10,7 @@ class AbstractFactory {
         throw new Error("createProductB() must be implemented."); // Abstract method, must be overridden
     }
 }
+```
 module.exports = AbstractFactory; // Export the class so it can be extended
 
 // AbstractProductA.js
