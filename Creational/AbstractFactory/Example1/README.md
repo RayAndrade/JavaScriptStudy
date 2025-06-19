@@ -1,12 +1,12 @@
-# 🏭 Abstract Factory Pattern in JavaScript (GoF, Pages 84–85)
+# 🏭 Abstract Factory Pattern in JavaScript (GoF Style, Pages 84–85)
 
-This project demonstrates the **Abstract Factory** design pattern using class names and structure from pages **84–85** of *Design Patterns: Elements of Reusable Object-Oriented Software* (Gang of Four).
+This project demonstrates the **Abstract Factory** design pattern, following the class structure and naming conventions from pages **84–85** of the GoF book *Design Patterns: Elements of Reusable Object-Oriented Software*.
 
-It creates families of related products (`ProductA` and `ProductB`) using an abstract factory interface, ensuring that the client remains decoupled from the concrete product implementations.
+Each product family consists of related products (A and B). The client uses the abstract factory and product interfaces, remaining completely **decoupled from concrete implementations**.
 
 ---
 
-## 📁 Project Structure (Creation Order)
+## 📁 File Structure (Creation Order)
 
 ```
 
@@ -26,27 +26,34 @@ index.js
 
 ---
 
-## 🔧 Abstract Factory Classes
+## 🧱 Abstract Factory & Products
 
 ### `AbstractFactory.js`
 
 ```javascript
+// Abstract class declaring creation methods for abstract product families
 class AbstractFactory {
+    // Method to create a product of type A
     createProductA() {
-        throw new Error("createProductA() must be implemented.");
+        throw new Error("createProductA() must be implemented."); // Forces subclasses to override
     }
 
+    // Method to create a product of type B
     createProductB() {
-        throw new Error("createProductB() must be implemented.");
+        throw new Error("createProductB() must be implemented."); // Forces subclasses to override
     }
 }
 module.exports = AbstractFactory;
 ````
 
+---
+
 ### `AbstractProductA.js`
 
 ```javascript
+// Abstract base class for product family A
 class AbstractProductA {
+    // Abstract method that all ProductA variants must implement
     usefulFunctionA() {
         throw new Error("usefulFunctionA() must be implemented.");
     }
@@ -54,14 +61,19 @@ class AbstractProductA {
 module.exports = AbstractProductA;
 ```
 
+---
+
 ### `AbstractProductB.js`
 
 ```javascript
+// Abstract base class for product family B
 class AbstractProductB {
+    // Abstract method that must be implemented by ProductB variants
     usefulFunctionB() {
         throw new Error("usefulFunctionB() must be implemented.");
     }
 
+    // Another abstract method that collaborates with ProductA
     anotherUsefulFunctionB(collaborator) {
         throw new Error("anotherUsefulFunctionB() must be implemented.");
     }
@@ -78,32 +90,39 @@ module.exports = AbstractProductB;
 ```javascript
 const AbstractProductA = require('./AbstractProductA');
 
+// Concrete implementation of AbstractProductA
 class ProductA1 extends AbstractProductA {
     usefulFunctionA() {
-        return 'ProductA1: The result of the product A1.';
+        return 'ProductA1: The result of the product A1.'; // Return string to simulate behavior
     }
 }
 module.exports = ProductA1;
 ```
+
+---
 
 ### `ProductA2.js`
 
 ```javascript
 const AbstractProductA = require('./AbstractProductA');
 
+// Concrete implementation of AbstractProductA
 class ProductA2 extends AbstractProductA {
     usefulFunctionA() {
-        return 'ProductA2: The result of the product A2.';
+        return 'ProductA2: The result of the product A2.'; // Return string to simulate behavior
     }
 }
 module.exports = ProductA2;
 ```
+
+---
 
 ### `ProductB1.js`
 
 ```javascript
 const AbstractProductB = require('./AbstractProductB');
 
+// Concrete implementation of AbstractProductB
 class ProductB1 extends AbstractProductB {
     usefulFunctionB() {
         return 'ProductB1: The result of the product B1.';
@@ -116,11 +135,14 @@ class ProductB1 extends AbstractProductB {
 module.exports = ProductB1;
 ```
 
+---
+
 ### `ProductB2.js`
 
 ```javascript
 const AbstractProductB = require('./AbstractProductB');
 
+// Concrete implementation of AbstractProductB
 class ProductB2 extends AbstractProductB {
     usefulFunctionB() {
         return 'ProductB2: The result of the product B2.';
@@ -144,6 +166,7 @@ const AbstractFactory = require('./AbstractFactory');
 const ProductA1 = require('./ProductA1');
 const ProductB1 = require('./ProductB1');
 
+// ConcreteFactory1 creates ProductA1 and ProductB1
 class ConcreteFactory1 extends AbstractFactory {
     createProductA() {
         return new ProductA1();
@@ -156,6 +179,8 @@ class ConcreteFactory1 extends AbstractFactory {
 module.exports = ConcreteFactory1;
 ```
 
+---
+
 ### `ConcreteFactory2.js`
 
 ```javascript
@@ -163,6 +188,7 @@ const AbstractFactory = require('./AbstractFactory');
 const ProductA2 = require('./ProductA2');
 const ProductB2 = require('./ProductB2');
 
+// ConcreteFactory2 creates ProductA2 and ProductB2
 class ConcreteFactory2 extends AbstractFactory {
     createProductA() {
         return new ProductA2();
@@ -182,15 +208,16 @@ module.exports = ConcreteFactory2;
 ### `Client.js`
 
 ```javascript
+// Client works with products only via their abstract interfaces
 class Client {
     constructor(factory) {
-        this.productA = factory.createProductA();
-        this.productB = factory.createProductB();
+        this.productA = factory.createProductA(); // Store instance of ProductA
+        this.productB = factory.createProductB(); // Store instance of ProductB
     }
 
     run() {
-        console.log(this.productB.usefulFunctionB());
-        console.log(this.productB.anotherUsefulFunctionB(this.productA));
+        console.log(this.productB.usefulFunctionB()); // Use ProductB independently
+        console.log(this.productB.anotherUsefulFunctionB(this.productA)); // Let ProductB collaborate with ProductA
     }
 }
 module.exports = Client;
@@ -198,7 +225,7 @@ module.exports = Client;
 
 ---
 
-## 🚀 Demo Runner
+## 🚀 index.js (Runner)
 
 ### `index.js`
 
@@ -207,10 +234,12 @@ const ConcreteFactory1 = require('./ConcreteFactory1');
 const ConcreteFactory2 = require('./ConcreteFactory2');
 const Client = require('./Client');
 
+// Demonstrate behavior using ConcreteFactory1
 console.log('Client: Testing client code with the first factory type...');
 const client1 = new Client(new ConcreteFactory1());
 client1.run();
 
+// Demonstrate behavior using ConcreteFactory2
 console.log('\nClient: Testing the same client code with the second factory type...');
 const client2 = new Client(new ConcreteFactory2());
 client2.run();
@@ -218,7 +247,7 @@ client2.run();
 
 ---
 
-## 🧪 Sample Output
+## 🧪 Expected Output
 
 ```bash
 Client: Testing client code with the first factory type...
@@ -234,20 +263,8 @@ ProductB2: Collaborating with (ProductA2: The result of the product A2.)
 
 ## 📚 References
 
-* *Design Patterns: Elements of Reusable Object-Oriented Software* — GoF
-* Pages **84–85** for the Abstract Factory class diagram and example
-
----
-
-## 🧠 Summary Table
-
-| Role               | JS Class                     | Description                                    |
-| ------------------ | ---------------------------- | ---------------------------------------------- |
-| AbstractFactory    | `AbstractFactory`            | Interface for creating products                |
-| ConcreteFactory    | `ConcreteFactory1/2`         | Creates specific product families              |
-| AbstractProductA/B | `AbstractProductA/B`         | Declares interface for product types           |
-| ConcreteProductA/B | `ProductA1/2`, `ProductB1/2` | Implements product-specific behavior           |
-| Client             | `Client`                     | Uses factory to operate with abstract products |
+* *Design Patterns: Elements of Reusable Object-Oriented Software*, GoF
+* Pages 84–85 — Abstract Factory Pattern
 
 ---
 
@@ -257,5 +274,5 @@ ProductB2: Collaborating with (ProductA2: The result of the product A2.)
 node index.js
 ```
 
-You must run this in a directory containing all the files listed above.
+Ensure all files are in the same directory or adjust module paths accordingly.
 
