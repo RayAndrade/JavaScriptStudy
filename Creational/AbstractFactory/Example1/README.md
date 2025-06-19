@@ -31,7 +31,6 @@ index.js
 ### `AbstractFactory.js`
 
 ```javascript
->>>>>>> 85783d1 (*)
 class AbstractFactory {
     createProductA() {
         throw new Error("createProductA() must be implemented.");
@@ -41,13 +40,8 @@ class AbstractFactory {
         throw new Error("createProductB() must be implemented.");
     }
 }
-<<<<<<< HEAD
-```
-module.exports = AbstractFactory; // Export the class so it can be extended
-=======
 module.exports = AbstractFactory;
 ````
->>>>>>> 85783d1 (*)
 
 ### `AbstractProductA.js`
 
@@ -264,11 +258,4 @@ node index.js
 ```
 
 You must run this in a directory containing all the files listed above.
-
-```
-
----
-
-Would you like me to save this as an actual `README.md` file in your project or send a zipped folder with all working files?
-```
 
