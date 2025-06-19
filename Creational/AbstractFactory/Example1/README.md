@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-
-// AbstractFactory.js
-// Defines the interface for creating abstract product families
-```
-=======
-Thank you! Here's the correct **`README.md`** in GitHub markdown format with **code examples placed between triple backticks (\`\`\`)** for proper formatting.
-
----
-
-```markdown
 # 🏭 Abstract Factory Pattern in JavaScript (GoF, Pages 84–85)
 
 This project demonstrates the **Abstract Factory** design pattern using class names and structure from pages **84–85** of *Design Patterns: Elements of Reusable Object-Oriented Software* (Gang of Four).
