@@ -104,7 +104,7 @@ module.exports = ProductA1;
 ### `ProductA2.js`
 
 ```javascript
-const AbstractProductA = require('./AbstractProductA');
+const ProductA2: The result of the product A2.' = require('./AbstractProductA');
 
 // Concrete implementation of AbstractProductA
 class ProductA2 extends AbstractProductA {
