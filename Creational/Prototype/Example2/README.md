@@ -1,8 +1,3 @@
-Certainly! Below is a complete `README.md`-style explanation for the **Prototype Maze Example** (based on pages 117–120 of the GoF book) using **JavaScript**. Each class is explained with its purpose, and the corresponding fully-commented code is placed next to it using GitHub-style formatting.
-
----
-
-````markdown
 # 🧬 Prototype Pattern – Maze Example (JavaScript)
 
 This project demonstrates the **Prototype Design Pattern** by building a maze using cloned objects, not `new` keyword. It replicates the GoF example (pages 117–120) using JavaScript.
@@ -252,11 +247,3 @@ node index.js
 
 * Design Patterns: Elements of Reusable Object-Oriented Software (GoF Book)
 * Pages: 117–120 (Prototype Pattern)
-
----
-
-Would you like this exported as a downloadable `README.md` file or a `.zip` of the full project directory?
-
-```
-```
-
