@@ -1,9 +1,5 @@
 # 🧬 Prototype Pattern – Maze Example (JavaScript)
 
-This project demonstrates the **Prototype Design Pattern** by building a maze using cloned objects, not `new` keyword. It replicates the GoF example (pages 117–120) using JavaScript.
-
----
-
 ## 🧱 Class Breakdown
 
 ---
