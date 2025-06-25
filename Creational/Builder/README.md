@@ -1,13 +1,9 @@
-/* I am teaching new college students how to use JavaScript with design patterns.
+<!-- I am teaching new college students how to use JavaScript with design patterns.
 I need a  JavaScript  code example of the Builder design Pattern, a Creational Pattern.  Put each class in its own JavaScript file. 
 Use the names for the classes the same as those that are used in the UML/Class Diagram that was given in the book Design Patterns Elements of Reusable OO Software on page 94. Comment on each line of code you will give. Explain the results of your demo. Place your demo in the index.js file and each class should have it's own *.js file to include in index.js I am using WebStorm on a linux ubuntu system 
 Comment on each line of code and what is the purpose of each class or interface
 Outside each class give its purpose and how it relates to the project
-*/
-
-I’ve created a GitHub-ready `README.md` for your **Builder Pattern in JavaScript**, following the UML and naming from *Design Patterns (GoF, p.94)*. It includes rich explanations, class-by-class breakdowns, fully-commented code blocks, and demo output. Here's the formatted file:
-
-```markdown
+-->
 # 🛠️ Builder Design Pattern in JavaScript (GoF Style, Page 94)
 
 This project demonstrates the **Builder Design Pattern** in JavaScript, following the structure and class names from *Design Patterns: Elements of Reusable Object-Oriented Software* (GoF, p.94).
