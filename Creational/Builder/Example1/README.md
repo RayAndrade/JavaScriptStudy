@@ -51,8 +51,32 @@ class Builder {
 }
 module.exports = Builder;
 ````
+---
+
+### 📦 Product.js
+
+**Purpose**: Represents the complex object being built. Stores parts and knows how to display itself.
+
+```javascript
+// Product.js
+class Product {
+    constructor() {
+        this.parts = [];               // Initialize parts list
+    }
+
+    add(part) {
+        this.parts.push(part);         // Add a part to the list
+    }
+
+    show() {
+        console.log("Product parts: " + this.parts.join(", "));
+    }
+}
+module.exports = Product;
+```
 
 ---
+
 
 ### 🛠️ ConcreteBuilder.js
 
@@ -84,31 +108,6 @@ class ConcreteBuilder extends Builder {
 module.exports = ConcreteBuilder;
 ```
 ---
-
-### 📦 Product.js
-
-**Purpose**: Represents the complex object being built. Stores parts and knows how to display itself.
-
-```javascript
-// Product.js
-class Product {
-    constructor() {
-        this.parts = [];               // Initialize parts list
-    }
-
-    add(part) {
-        this.parts.push(part);         // Add a part to the list
-    }
-
-    show() {
-        console.log("Product parts: " + this.parts.join(", "));
-    }
-}
-module.exports = Product;
-```
-
----
-
 
 ### 🎯 Director.js
 
