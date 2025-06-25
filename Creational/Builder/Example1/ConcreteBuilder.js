@@ -1,23 +1,19 @@
-// ConcreteBuilder.js
 const Builder = require('./Builder');
 const Product = require('./Product');
 
 class ConcreteBuilder extends Builder {
     constructor() {
         super();
-        this.product = new Product();  // Initialize new Product
+        this.product = new Product();
     }
-
     buildPartA() {
-        this.product.add("PartA");     // Add Part A to product
+        this.product.add("PartA");
     }
-
     buildPartB() {
-        this.product.add("PartB");     // Add Part B to product
+        this.product.add("PartB");
     }
-
     getResult() {
-        return this.product;           // Return the full product
+        return this.product;
     }
 }
 module.exports = ConcreteBuilder;

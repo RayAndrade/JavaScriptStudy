@@ -1,13 +1,10 @@
-// Product.js
 class Product {
     constructor() {
-        this.parts = [];               // Initialize parts list
+        this.parts = []
     }
-
     add(part) {
-        this.parts.push(part);         // Add a part to the list
+        this.parts.push(part);
     }
-
     show() {
         console.log("Product parts: " + this.parts.join(", "));
     }
