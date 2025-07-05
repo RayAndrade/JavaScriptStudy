@@ -1,7 +1,3 @@
-Of course! Let’s break down the **Chain of Responsibility** pattern with the same clear, junior-friendly structure.
-
----
-
 ## 🔗 What Is the Chain of Responsibility Design Pattern?
 
 The **Chain of Responsibility** pattern is a behavioral pattern that lets you pass a request along a **chain of handlers**, where each handler decides whether to process it or pass it on.
@@ -67,7 +63,3 @@ It’s great for building flexible pipelines and event-handling systems.
 1. Overuse may lead to tangled chains with unclear responsibilities.
 2. Improperly designed chains might skip critical processing steps.
 3. Performance may suffer if too many handlers are involved.
-
----
-
-If you’d like, we can move on to **Command** next — just say the word!
