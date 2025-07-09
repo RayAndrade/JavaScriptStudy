@@ -1,3 +1,5 @@
+**[Behavioral patterns ](../README.md)** 
+
 ## 🧭 What Is the Mediator Design Pattern?
 
 The **Mediator** pattern is a behavioral pattern that **centralizes communication** between a set of objects, so they don’t talk to each other directly but instead through a mediator.
