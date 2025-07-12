@@ -1,6 +1,4 @@
-// Client.js
 
-// Client builds the chain of handlers and sends requests
 class Client {
     static run() {
         const ConcreteHandler1 = require('./ConcreteHandler1');
@@ -11,11 +9,9 @@ class Client {
         const h2 = new ConcreteHandler2();
         const h3 = new ConcreteHandler3();
 
-        // chain the handlers
         h1.setSuccessor(h2);
         h2.setSuccessor(h3);
 
-        // issue requests
         const requests = [2, 5, 14, 22, 30];
 
         requests.forEach(request => {
@@ -24,5 +20,4 @@ class Client {
         });
     }
 }
-
 module.exports = Client;
