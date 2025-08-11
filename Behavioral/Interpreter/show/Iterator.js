@@ -13,4 +13,4 @@ class Iterator {
         throw new Error("currentItem() must be implemented by subclasses");
     }
 }
-module.exports = Iterator;
+module.exports = Iterator

@@ -1,4 +1,3 @@
-
 const Iterator = require('./Iterator');
 
 class ConcreteIterator extends Iterator {
@@ -25,6 +24,7 @@ class ConcreteIterator extends Iterator {
         if (!this.isDone()) {
             return this.aggregate.get(this.index);
         }
-        return null; }
+        return null;
+    }
 }
 module.exports = ConcreteIterator;
