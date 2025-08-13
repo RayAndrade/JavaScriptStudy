@@ -11,7 +11,7 @@ Let’s dive into the **Iterator Pattern**, one of the most common behavioral pa
 ---
 
 **As requested, I will**:
-✅ explain each class outside the code block
+✅ explain each class outside the code block<br/>
 ✅ put the code in fenced triple-backtick blocks
 ✅ fully comment each line
 ✅ place each class in its own `.js` module
