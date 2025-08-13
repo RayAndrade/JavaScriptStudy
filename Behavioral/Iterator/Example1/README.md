@@ -10,13 +10,13 @@ Let’s dive into the **Iterator Pattern**, one of the most common behavioral pa
 
 ---
 
-**As requested, I will**:
+**As requested, I will**:<br/>
 ✅ explain each class outside the code block<br/>
-✅ put the code in fenced triple-backtick blocks
-✅ fully comment each line
-✅ place each class in its own `.js` module
-✅ include an `index.js` demo
-✅ in a GitHub-ready style for WebStorm on Linux
+✅ put the code in fenced triple-backtick blocks<br/>
+✅ fully comment each line<br/>
+✅ place each class in its own `.js` module<br/>
+✅ include an `index.js` demo<br/>
+✅ in a GitHub-ready style for WebStorm on Linux<br/>
 
 ---
 
