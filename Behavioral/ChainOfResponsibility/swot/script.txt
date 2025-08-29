@@ -1,0 +1,1 @@
+SWOT Analysys of the Design pattern called Chain of Responsibility for JavaScript

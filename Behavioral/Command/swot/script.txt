@@ -1,0 +1,2 @@
+
+S.W.O.T analysys of the cesign pattern call Command which is a Behavorial pattern for JavaScript
