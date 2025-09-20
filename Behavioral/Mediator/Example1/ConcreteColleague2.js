@@ -1,14 +1,11 @@
-// ConcreteColleague2.js
 
 const Colleague = require('./Colleague');
 
-// ConcreteColleague2 communicates through the mediator
 class ConcreteColleague2 extends Colleague {
     send(message) {
         console.log(`ConcreteColleague2 sends: ${message}`);
-        this.mediator.send(message, this); // delegate to mediator
+        this.mediator.send(message, this);
     }
-
     notify(message) {
         console.log(`ConcreteColleague2 receives: ${message}`);
     }
