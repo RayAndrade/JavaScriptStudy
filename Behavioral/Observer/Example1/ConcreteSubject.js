@@ -1,23 +1,18 @@
-// ConcreteSubject.js
 
 const Subject = require('./Subject');
 
-// ConcreteSubject holds its own state and notifies observers
 class ConcreteSubject extends Subject {
     constructor() {
         super();
-        this.state = null; // subject state
+        this.state = null;
     }
-
     getState() {
         return this.state;
     }
-
     setState(state) {
-        this.state = state; // update internal state
+        this.state = state;
         console.log(`ConcreteSubject: state changed to ${state}`);
-        this.notify(); // notify observers
+        this.notify();
     }
 }
-
 module.exports = ConcreteSubject;

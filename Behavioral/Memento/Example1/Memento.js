@@ -1,13 +1,10 @@
-// Memento.js
 
-// Memento stores the state of the Originator
 class Memento {
     constructor(state) {
-        this.state = state; // capture the state
+        this.state = state;
     }
-
     getState() {
-        return this.state; // provide read-only access
+        return this.state;
     }
 }
 

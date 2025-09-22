@@ -1,31 +1,24 @@
-// Originator.js
 
 const Memento = require('./Memento');
 
-// Originator creates and restores mementos
 class Originator {
     constructor() {
-        this.state = ""; // current state
+        this.state = "";
     }
-
     setState(state) {
-        this.state = state; // change internal state
+        this.state = state;
         console.log(`Originator: setting state to "${state}"`);
     }
-
     getState() {
-        return this.state; // read current state
+        return this.state;
     }
-
     save() {
         console.log(`Originator: saving to memento`);
-        return new Memento(this.state); // create a memento
+        return new Memento(this.state);
     }
-
     restore(memento) {
-        this.state = memento.getState(); // restore from memento
+        this.state = memento.getState();
         console.log(`Originator: state restored to "${this.state}"`);
     }
 }
-
 module.exports = Originator;

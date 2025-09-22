@@ -1,6 +1,4 @@
-// Client.js
 
-// Client sets up the scenario
 class Client {
     static run() {
         const Originator = require('./Originator');
@@ -9,7 +7,6 @@ class Client {
         const originator = new Originator();
         const caretaker = new Caretaker();
 
-        // change and save state
         originator.setState("State A");
         caretaker.addMemento(originator.save());
 
@@ -18,10 +15,8 @@ class Client {
 
         originator.setState("State C");
 
-        // restore to previous state
-        originator.restore(caretaker.getMemento(0)); // back to A
-        originator.restore(caretaker.getMemento(1)); // back to B
+        originator.restore(caretaker.getMemento(0));
+        originator.restore(caretaker.getMemento(1));
     }
 }
-
 module.exports = Client;
