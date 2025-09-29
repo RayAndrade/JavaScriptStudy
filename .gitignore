@@ -1,0 +1,19 @@
+# Node / JS
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# Env / secrets
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
