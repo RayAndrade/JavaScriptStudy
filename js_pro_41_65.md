@@ -1,3 +1,5 @@
+hello
+
 # Inheritance in JavaScript  
 ## *Pro JavaScript Design Patterns* — Summary (pp. 41–65)
 
