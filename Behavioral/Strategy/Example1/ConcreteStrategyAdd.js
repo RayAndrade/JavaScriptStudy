@@ -1,12 +1,9 @@
-// ConcreteStrategyAdd.js
 
 const Strategy = require('./Strategy');
 
-// ConcreteStrategyAdd implements addition
 class ConcreteStrategyAdd extends Strategy {
     execute(a, b) {
-        return a + b; // add
+        return a + b;
     }
 }
-
 module.exports = ConcreteStrategyAdd;

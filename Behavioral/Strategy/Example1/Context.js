@@ -1,18 +1,13 @@
-// Context.js
 
-// Context uses a Strategy to perform the algorithm
 class Context {
     constructor(strategy) {
-        this.strategy = strategy; // the chosen strategy
+        this.strategy = strategy;
     }
-
     setStrategy(strategy) {
-        this.strategy = strategy; // allow changing strategy at runtime
+        this.strategy = strategy;
     }
-
     executeStrategy(a, b) {
-        return this.strategy.execute(a, b); // delegate
+        return this.strategy.execute(a, b);
     }
 }
-
 module.exports = Context;
