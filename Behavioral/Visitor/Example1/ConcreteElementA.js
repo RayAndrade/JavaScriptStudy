@@ -1,17 +1,13 @@
-// ConcreteElementA.js
 
 const Element = require('./Element');
 
-// ConcreteElementA is a visitable element
 class ConcreteElementA extends Element {
     constructor(value) {
         super();
-        this.value = value; // state unique to this element
+        this.value = value;
     }
-
     accept(visitor) {
-        visitor.visitConcreteElementA(this); // double-dispatch
+        visitor.visitConcreteElementA(this);
     }
 }
-
 module.exports = ConcreteElementA;
