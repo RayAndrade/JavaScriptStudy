@@ -1,0 +1,13 @@
+I am teaching **JavaScript** using the **Command** from Design Patterns: Elements of Reusable Object-Oriented Software (GoF).
+Please list the Participants in the exact order they appear under the GoF “Participants” subsection for this pattern, using the exact participant names from the book.
+
+For each participant: write three short, plain-English sentences that are spoken-friendly (no code, no jargon).
+Keep it geared to a junior developer learning [Language] (if JavaScript, feel free to use light JS-flavored metaphors, but still no code).
+
+Output format (repeat for each participant in GoF order):
+ParticipantName
+• Sentence 1
+• Sentence 2
+• Sentence 3
+
+Do not add or remove participants. Do not change their names. Keep all lines concise and readable aloud.
