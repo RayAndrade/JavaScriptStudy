@@ -1,5 +1,3 @@
----
-
 ## 🏭 What Is the Abstract Factory Pattern?
 
 ### 🎯 **In simple terms:**
