@@ -29,11 +29,8 @@ Here is **Creational Pattern — Factory Method** rewritten for **JavaScript stu
 
 ## **ConcreteCreator**
 
-* Overrides the Factory Method to create a specific ConcreteProduct.
+* Overrides the Factory Method to create a specific Concrete Product.
 * Controls which Product class gets instantiated.
 * Keeps Product creation flexible for the Client.
 
----
-
-Ready for **Prototype**, **Singleton**, or the **Structural patterns** next?
 
