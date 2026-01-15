@@ -1,0 +1,8 @@
+The Abstract Factory Design Pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. In other words, it abstracts the process of creating objects by encapsulating the creation logic into separate factory objects. These factory objects are responsible for creating objects that belong to a common theme or family.
+
+I explore this pattern with JavaScript
+
+0:47 What is it?
+2:39 UML/ORM
+3:29 Code
+10:01 S.W.O.T.
