@@ -1,8 +1,10 @@
+
 ## 🔌 What Is the Adapter Design Pattern?
 
 The **Adapter** pattern is a structural pattern that acts like a **translator** between two incompatible interfaces, allowing classes or code that otherwise couldn’t work together to cooperate.
 
 Think of it like a power plug adapter: your phone has a USB-C cable, the wall socket is Type-A — the adapter lets them connect without changing either the phone or the socket.
+
 
 ## 🤔 Why Would I Use It?
 

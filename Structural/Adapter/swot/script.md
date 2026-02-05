@@ -1,4 +1,4 @@
-### **S.W\.O.T. Analysis** of using the **Adapter Design Pattern** in **JavaScript** 
+### **S.W\.O.T. Analysis** of the **Adapter Design Pattern** using **JavaScript** 
 
 ### 🟩 **Strengths**
 
