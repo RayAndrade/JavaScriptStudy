@@ -245,3 +245,77 @@ ConcreteColleague1 receives: I'm good, thanks!
 ✅ Show how this can simplify **many-to-many** communication
 ✅ Extend to more colleagues or even build a **chat room** example
 
+
+# TheRayCode | JavaScript Mediator — Classes and Variables
+
+## 1. `Mediator`
+
+**Class role:** Defines `Notify()`, the operation colleagues use to report a message. The base implementation throws an error so a subclass must provide the routing behavior.
+
+**Instance variables:** None.
+
+**Method parameters:**
+
+- `sender` — The colleague object that sent the message.
+- `message` — The value sent by the colleague. Both messages in this demo are strings.
+
+## 2. `ConcreteMediator`
+
+**Class role:** Extends `Mediator`. It registers the two colleagues through `SetColleagues()` and routes each message to the other colleague through `Notify()`.
+
+**Instance variables:**
+
+- `_colleague1` — Reference to the `ConcreteColleague1` instance.
+- `_colleague2` — Reference to the `ConcreteColleague2` instance.
+
+**Method parameters:**
+
+- `colleague1` and `colleague2` — The two objects passed to `SetColleagues()`. The mediator stores them in `_colleague1` and `_colleague2`.
+- `sender` — The object `Notify()` compares with its stored references to choose the recipient.
+- `message` — The value passed to the recipient’s `Receive()` method.
+
+## 3. `Colleague`
+
+**Class role:** Base class for both concrete colleagues. Its constructor gives each colleague a reference to the mediator.
+
+**Instance variable:**
+
+- `_mediator` — Reference to the mediator that coordinates communication.
+
+**Constructor parameter:**
+
+- `mediator` — The object passed into the constructor and stored as `_mediator`.
+
+## 4. `ConcreteColleague1`
+
+**Class role:** Extends `Colleague`. `Send()` passes the message and `this` to the mediator. `Receive()` prints the message to the console.
+
+**Instance variable:**
+
+- `_mediator` — Inherited from `Colleague` and used to call `Notify()`.
+
+**Method parameter:**
+
+- `message` — The outgoing value in `Send()` or the incoming value in `Receive()`.
+
+## 5. `ConcreteColleague2`
+
+**Class role:** Extends `Colleague`. It uses the same send-and-receive behavior as `ConcreteColleague1` and represents the second participant in the GoF Structure diagram.
+
+**Instance variable:**
+
+- `_mediator` — Inherited from `Colleague` and used to call `Notify()`.
+
+**Method parameter:**
+
+- `message` — The outgoing value in `Send()` or the incoming value in `Receive()`.
+
+## Variables in `index.js`
+
+- `mediator` — The single `ConcreteMediator` instance shared by both colleagues.
+- `colleague1` — The `ConcreteColleague1` instance that sends “Are you ready?”
+- `colleague2` — The `ConcreteColleague2` instance that replies “Yes, I am ready.”
+
+**Impress speaker note:** “The references show who knows whom. Each colleague stores `_mediator`. The mediator stores `_colleague1` and `_colleague2`. When a colleague sends a message, it passes `this` so the mediator can identify the sender and route the message.”
+
+
